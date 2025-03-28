@@ -2,6 +2,12 @@
 
 A modular IoT device simulator using MQTT (via Eclipse Paho), secured with TLS, integrated with HiveMQ, PostgreSQL for persistence, and real-time Metabase dashboards.
 
+Inspired by:
+- https://rmnicola.github.io/m9-ec-encontros/ponderada1/
+- https://rmnicola.github.io/m9-ec-encontros/ponderada2/
+- https://rmnicola.github.io/m9-ec-encontros/ponderada4/
+- https://rmnicola.github.io/m9-ec-encontros/ponderada5/
+
 ---
 
 ## 🌐 Project Overview
@@ -33,7 +39,6 @@ This simulator mimics real-world sensors (e.g., SPS30, MiCS-6814, Solar Radiatio
 
 ## 🚀 How to Use (or: Commands in Correct Order)
 
-
 ```bash
 # 1. Enter Nix development environment
 nix develop
@@ -55,3 +60,6 @@ chmod +x scripts/*.sh
 
 # 7. Run tests (connection, QoS, data integrity, etc.)
 ./scripts/test_runner.sh
+```
+
+## 📸 Video Demo in "demo.mp4"
