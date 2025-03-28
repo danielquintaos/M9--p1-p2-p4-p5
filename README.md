@@ -38,17 +38,20 @@ This simulator mimics real-world sensors (e.g., SPS30, MiCS-6814, Solar Radiatio
 # 1. Enter Nix development environment
 nix develop
 
-# 2. Start full stack (Postgres + HiveMQ + Metabase)
+# 2. Enable docker 
+nix-shell -p docker-compose
+
+# 3. Start full stack (Postgres + HiveMQ + Metabase)
 sudo docker-compose up -d
 
-# 3. Initialize database schema
+# 4. Initialize database schema
 python scripts/db_migrate.py
 
-# Make shell scripts executable
+# 5. Make shell scripts executable
 chmod +x scripts/*.sh  
 
-# 4. Start simulator (choose: sps30, mics6814, solar_radiation)
+# 6. Start simulator (choose: sps30, mics6814, solar_radiation)
 ./scripts/start_simulator.sh sps30
 
-# 5. Run tests (connection, QoS, data integrity, etc.)
+# 7. Run tests (connection, QoS, data integrity, etc.)
 ./scripts/test_runner.sh
