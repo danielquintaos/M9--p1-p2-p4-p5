@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+
+  # 🚀 PostgreSQL: Stores sensor data
+  postgres:
+    image: postgres:15
+    container_name: iot-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: iot_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: iot_data
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 📊 Metabase: Dashboards for sensor data
+  metabase:
+    image: metabase/metabase:latest
+    container_name: iot-metabase
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  # 🔗 HiveMQ CE (self-hosted broker with no TLS, dev-only)
+  hivemq:
+    image: hivemq/hivemq-ce
+    container_name: iot-hivemq
+    restart: unless-stopped
+    ports:
+      - "1883:1883"   # MQTT
+      - "8080:8080"   # Web UI
+
+volumes:
+  postgres_data:

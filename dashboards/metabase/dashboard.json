@@ -1,0 +1,7 @@
+// dashboards/metabase/dashboard.json
+{
+    "name": "IoT Sensor Metrics",
+    "description": "Visualizations of SPS30, MiCS-6814, and Solar Radiation Sensor data",
+    "cards": [/* your visualizations go here */]
+  }
+  
