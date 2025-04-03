@@ -30,12 +30,12 @@ This simulator mimics real-world sensors (e.g., SPS30, MiCS-6814, Solar Radiatio
 ### 📂 Project Folder Structure
 
 ```text
-iot-simulator/
+M9--p1-p2-p4-p5/
 ├── README.md                  # 📘 Project overview and usage instructions
 ├── flake.nix                  # 🧊 Nix flake defining the dev environment
 ├── flake.lock                 # 🔒 Lock file for reproducible builds
 ├── shell.nix                  # 🐚 Fallback dev shell (non-flake compatible)
-├── .env                       # 🔐 Environment variables (not committed)
+├── .env                       # 🔐 Environment variables 
 ├── .gitignore                 # 🙈 Git exclusions (e.g., .env, __pycache__)
 │
 ├── src/                       # 💡 Main application source code
@@ -85,8 +85,7 @@ iot-simulator/
 │
 └── dashboards/                # 📊 Metabase visualization config
     └── metabase/
-        ├── dashboard.json     # Exported Metabase dashboard file
-        └── setup_guide.md     # Step-by-step instructions to connect Metabase
+        └── dashboard.json     # Exported Metabase dashboard file
 ```
 
 ---
